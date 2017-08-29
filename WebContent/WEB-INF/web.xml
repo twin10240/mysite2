@@ -9,4 +9,39 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/applicationContext.xml</param-value>
+  </context-param>
+  
+  <listener>
+  	<listener-class>com.bigdata2017.web.listener.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.bigdata2017.web.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+ 
+  <servlet>
+    <servlet-name>LifeCircleServlet</servlet-name>
+    <servlet-class>com.bigdata2017.mysite.controller.LifeCircleServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/config.xml</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LifeCircleServlet</servlet-name>
+    <url-pattern>/lc</url-pattern>
+  </servlet-mapping>
 </web-app>
