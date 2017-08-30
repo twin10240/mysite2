@@ -21,11 +21,6 @@ public class JoinAction implements Action {
 		String password = request.getParameter( "password" );
 		String gender = request.getParameter( "gender" );
 		
-		System.out.println( name );
-		System.out.println( email );
-		System.out.println( password );
-		System.out.println( gender );
-		
 		new UserDao().insert(new UserVo(name, password, email, gender));
 		WebUtil.redirect(request.getContextPath() + "/user?a=joinsuccess", request, response);
 	}

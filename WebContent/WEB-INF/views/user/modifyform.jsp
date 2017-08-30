@@ -56,11 +56,4 @@
 		<jsp:include page="/WEB-INF/views/includes/footer.jsp" />
 	</div>
 </body>
-<%
-	if( "success".equals( request.getParameter( "update" ) ) ) {
-%>
-	<script>alert( "성공적으로 수정 하였습니다." );</script>
-<%
-	}
-%>
 </html>
